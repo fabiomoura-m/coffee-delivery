@@ -1,6 +1,9 @@
 import { Trash } from 'phosphor-react';
 import { QuantityInput } from '../../../../components/QuantityInput';
 import { RegularText } from '../../../../components/Typography';
+import { CartItem } from '../../../../contexts/CartContext';
+import { useCart } from '../../../../hooks/useCart';
+import { formatMoney } from '../../../../utils/formatMoney';
 
 import {
     ActionsContainer,
@@ -8,17 +11,36 @@ import {
     RemoveButton
 } from './styles';
 
-export function CoffeeCartCard() {
+interface CoffeeCartCardProps {
+    coffee: CartItem;
+}
+
+export function CoffeeCartCard({ coffee }: CoffeeCartCardProps) {
+    const { changeCartItemQuantity } = useCart();
+
+    const coffeeTotal = coffee.price * coffee.quantity;
+    const formattedPrice = formatMoney(coffeeTotal);
+
+    function handleIncrease() {
+        changeCartItemQuantity(coffee.id, 'increase');
+    }
+    function handleDecrease() {
+        changeCartItemQuantity(coffee.id, 'decrease');
+    }
+
     return (
         <CoffeeCartCardContainer>
             <div>
-                <img src="/coffees/americano.png" alt="" />
+                <img src={`/coffees/${coffee.photo}`} alt="" />
                 <div>
-                    <RegularText color="subtitle">
-                        Expresso Tradicional
-                    </RegularText>
+                    <RegularText color="subtitle">{coffee.name}</RegularText>
                     <ActionsContainer>
-                        <QuantityInput size="small" />
+                        <QuantityInput
+                            size="small"
+                            onIncrease={handleIncrease}
+                            onDecrease={handleDecrease}
+                            quantity={coffee.quantity}
+                        />
                         <RemoveButton>
                             <Trash size={16} />
                             Remover
@@ -26,7 +48,7 @@ export function CoffeeCartCard() {
                     </ActionsContainer>
                 </div>
             </div>
-            <p>R$9,90</p>
+            <p>R$ {formattedPrice}</p>
         </CoffeeCartCardContainer>
     );
 }
