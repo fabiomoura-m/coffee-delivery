@@ -20,6 +20,20 @@ export const OrderConfirmedContainer = styled.div`
                 max-width: 380px;
             }
         }
+
+        @media (max-width: 426px) {
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+            > img {
+                max-width: 320px;
+            }
+        }
+    }
+
+    @media (max-width: 426px) {
+        margin-top: 1rem;
+        margin-bottom: 2rem;
     }
 `;
 
@@ -44,5 +58,9 @@ export const OrderDetailsContainer = styled.div`
 
     @media (max-width: 768px) {
         min-width: 22rem;
+    }
+
+    @media (max-width: 426px) {
+        min-width: 17rem;
     }
 `;

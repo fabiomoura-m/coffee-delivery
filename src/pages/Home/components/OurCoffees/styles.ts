@@ -3,6 +3,12 @@ import styled from 'styled-components';
 export const OurCoffeesContainer = styled.section`
     width: 100%;
     margin-top: 2rem;
+
+    @media (max-width: 426px) {
+        > h1 {
+            font-size: 1.5rem;
+        }
+    }
 `;
 
 export const CoffeeList = styled.div`
@@ -20,5 +26,9 @@ export const CoffeeList = styled.div`
     @media (max-width: 768px) {
         grid-template-columns: repeat(3, 1fr);
         column-gap: 1rem;
+    }
+
+    @media (max-width: 426px) {
+        grid-template-columns: 1fr;
     }
 `;

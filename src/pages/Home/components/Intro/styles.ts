@@ -33,6 +33,19 @@ export const IntroContent = styled.div`
             max-width: 320px;
         }
     }
+
+    @media (max-width: 426px) {
+        flex-direction: column;
+        gap: 2rem;
+
+        > div section h3 {
+            font-size: 1rem;
+        }
+
+        > img {
+            max-width: 280px;
+        }
+    }
 `;
 
 export const IntroTitle = styled(TitleText)`
@@ -40,6 +53,10 @@ export const IntroTitle = styled(TitleText)`
 
     @media (max-width: 768px) {
         font-size: 2rem;
+    }
+
+    @media (max-width: 426px) {
+        font-size: 1.5rem;
     }
 `;
 
@@ -52,5 +69,10 @@ export const BenefitsContainer = styled.div`
 
     @media (max-width: 768px) {
         font-size: 0.9rem;
+    }
+
+    @media (max-width: 426px) {
+        margin-top: 2rem;
+        font-size: 0.8rem;
     }
 `;

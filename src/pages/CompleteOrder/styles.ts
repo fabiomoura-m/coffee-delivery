@@ -15,6 +15,10 @@ export const CompleteOrderContainer = styled.form`
         flex-direction: column;
         align-items: center;
     }
+
+    @media (max-width: 426px) {
+        margin-bottom: 3rem;
+    }
 `;
 
 export const SectionBaseStyle = styled.div`
