@@ -6,6 +6,10 @@ export const CompleteOrderContainer = styled.form`
     justify-content: space-between;
     gap: 2rem;
     margin-bottom: 15rem;
+
+    @media (max-width: 1024px) {
+        gap: 1rem;
+    }
 `;
 
 export const SectionBaseStyle = styled.div`
@@ -13,4 +17,8 @@ export const SectionBaseStyle = styled.div`
     background: ${({ theme }) => theme.colors['base-card']};
     border-radius: 6px;
     padding: 2.5rem;
+
+    @media (max-width: 1024px) {
+        padding: 1.5rem;
+    }
 `;
