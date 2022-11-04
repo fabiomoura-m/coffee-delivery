@@ -18,6 +18,11 @@ export const CoffeeCardContainer = styled.div`
         height: 7.5rem;
         margin-top: -1.25rem;
     }
+
+    @media (max-width: 768px) {
+        padding: 1rem;
+        padding-top: 0;
+    }
 `;
 
 export const Tags = styled.div`

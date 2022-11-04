@@ -16,4 +16,9 @@ export const CoffeeList = styled.div`
     @media (max-width: 1024px) {
         column-gap: 1rem;
     }
+
+    @media (max-width: 768px) {
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 1rem;
+    }
 `;

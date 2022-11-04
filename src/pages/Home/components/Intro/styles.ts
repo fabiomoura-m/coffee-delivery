@@ -25,10 +25,22 @@ export const IntroContent = styled.div`
     align-items: center;
     justify-content: space-between;
     gap: 3.5rem;
+
+    @media (max-width: 768px) {
+        gap: 2rem;
+        font-size: 2rem;
+        > img {
+            max-width: 320px;
+        }
+    }
 `;
 
 export const IntroTitle = styled(TitleText)`
     margin-bottom: 1rem;
+
+    @media (max-width: 768px) {
+        font-size: 2rem;
+    }
 `;
 
 export const BenefitsContainer = styled.div`
@@ -37,4 +49,8 @@ export const BenefitsContainer = styled.div`
     grid-template-columns: 1fr 1fr;
     row-gap: 1.25rem;
     margin-top: 4.125rem;
+
+    @media (max-width: 768px) {
+        font-size: 0.9rem;
+    }
 `;
